@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+@model Duty
+<h1>Create Duty</h1>
+<div class="row">
+
+    <div class="col-md-6">
+
+        <form asp-action="Create" method="post" asp-controller="Duty">
+            <input type="hidden" asp-for="DutyId" />
+            <div class="form-group">
+                <label asp-for="DutyNote"></label>
+                <input asp-for="DutyNote" class="form-control" />
+                <span asp-validation-for="DutyNote" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+
+                <input type="submit" value="Create" class="btn-primary" />
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+

@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model List<Duty>
+
+
+<table class="table table-striped">
+    <tr>
+        <td>DutyId</td>
+        <td>DutyNote</td>
+        <td>IsCompleted</td>
+        <td>Actions</td>
+    </tr>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DutyId</td>
+                <td>@item.DutyNote</td>
+                <td>@item.IsCompleted</td>
+                <td>
+                    @if (!item.IsCompleted)
+                    {
+                        <form method="post" asp-action="Done" asp-route-id="@item.DutyId">
+                            <button type="submit" class="btn btn-success">Done</button>
+                        </form>
+                    }
+                    <a class="btn btn-warning" asp-controller="Duty" asp-action="Update" asp-route-id="@item.DutyId">Update</a>
+                    <a class="btn btn-danger"  asp-controller="Duty" asp-action="Remove" asp-route-id="@item.DutyId">Delete</a>
+                </td>
+            </tr>
+        }
+        <a class="btn btn-primary" asp-controller="Duty" asp-action="Create">Create</a>
+
+    </tbody>
+</table>
