@@ -1,0 +1,1 @@
+"ToDoList is a web application designed to help you organize your daily tasks. Developed using C# and .NET 8, it follows the MVC (Model-View-Controller) architecture. Users can add, edit, and mark tasks as completed. This application provides an easy-to-use tool for setting reminders and keeping track of your daily tasks online."
